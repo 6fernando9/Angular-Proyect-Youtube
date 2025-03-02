@@ -4,21 +4,21 @@
     <h1 class="ims">IMS</h1>
     <ul class="nav-links">
       @if(isAuth()){
-        <li><a routerLink="/dashboard" >Dashboard</a></li>
-        <li><a routerLink="/transactions" >Transactions</a></li>
-        <li><a routerLink="/purchase" >Purchase</a></li>
-        <li><a routerLink="/sell" >Sell</a></li>
-        <li><a routerLink="/profile" >Profile</a></li>
-        <li><a routerLink="/logout" onclick="logout()" >Logout</a></li>
+        <li><a [routerLink]="['/dashboard']" >Dashboard</a></li>
+        <li><a [routerLink]="['/transactions']" >Transactions</a></li>
+        <li><a [routerLink]="['/purchase']" >Purchase</a></li>
+        <li><a [routerLink]="['/sell']" >Sell</a></li>
+        <li><a [routerLink]="['/profile']" >Profile</a></li>
+        <li><a [routerLink]="['/logout']" (click)="logout()" >Logout</a></li>
       }@else{
-        <li><a routerLink="/login" >Login</a></li>
-        <li><a routerLink="/register" >Register</a></li>
+        <li><a [routerLink]="['/login']" >Login</a></li>
+        <li><a [routerLink]="['/register']" >Register</a></li>
       }
 
       @if(isAdmin()){
-        <li><a routerLink="/category" >Category</a></li>
-        <li><a routerLink="/product" >Product</a></li>
-        <li><a routerLink="/supplier" >Supplier</a></li>
+        <li><a [routerLink]="['/category']" >Category</a></li>
+        <li><a [routerLink]="['/product']" >Product</a></li>
+        <li><a [routerLink]="['/supplier']" >Supplier</a></li>
       }
 
     </ul>

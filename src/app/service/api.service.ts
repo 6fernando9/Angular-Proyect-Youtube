@@ -35,8 +35,8 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   //Metodo para encriptar y guardar en el LocalStorage
-  //un clave valor
-  //parece ser que cifra el valor usando la contrasenia como clave
+  // la clave de este sera la palabra token
+  // el valor sera el jwt, pero encriptado, para mayor seguridad
   encryptAndSaveTpStorage(key: string, value: string) {
     const encryptedValue = CryptoJs.AES.encrypt(
       value,
@@ -272,5 +272,5 @@ export class ApiService {
     });
   }
 
-  
+
 }
