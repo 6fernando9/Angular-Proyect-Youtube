@@ -1,1 +1,35 @@
-<p>category works!</p>
+<div class="category-page">
+  @if(message){
+    <div class="message">
+      {{ message }}
+    </div>
+  }
+  <div class="category-header" >
+    <h1>Category</h1>
+    <!-- FORMULARIO PARA AGREGAR Y EDITAR UNA CATEGORIA -->
+    <div class="add-cat">
+      <input type="text" [(ngModel)]="categoryName" placeholder="Category Name">
+      @if(!isEditing){
+        <button (click)="addCategory()">Add Category</button>
+      }@else {
+        <button (click)="editCategory()">Edit Category</button>
+      }
+    </div>
+  </div>
+    <!-- display the categorias -->
+     @if(categories.length > 0){
+       <ul class="category-list">
+          @for(category of categories; track category.id){
+            <li class="category-item">
+              <span>{{ category.name }}</span>
+                <div class="category-actions">
+                 <button (click)="handleEditCategory(category)">Edit</button>
+                 <button (click)="handleDeleteCategory(category.id)">Delete</button>
+                </div>
+              </li>
+          }
+       </ul>
+     }
+
+
+</div>
